@@ -7,7 +7,7 @@ const { Option } = Select;
 
 const CurrencySelection = () => {
     const [currencies, setCurrencies] = useState([]);
-    const [fromCurrency, setFromCurrency] = useState('USD'); // Default 'From' currency is USD
+    const [fromCurrency, setFromCurrency] = useState('INR'); // Default 'From' currency is INR
     const [toCurrency, setToCurrency] = useState('INR'); // Default 'To' currency is INR
     const [amount, setAmount] = useState(1); // Default amount is 1
     const [exchangeRate, setExchangeRate] = useState(null);
