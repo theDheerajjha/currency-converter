@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { Select, InputNumber } from 'antd';
-import axios from 'axios';
-import './CurrencySelection.css';
+import React, { useState, useEffect } from "react";
+import { Select, InputNumber } from "antd";
+import axios from "axios";
+import "./CurrencySelection.css";
 
 const { Option } = Select;
 
 const CurrencySelection = () => {
     const [currencies, setCurrencies] = useState([]);
-    const [fromCurrency, setFromCurrency] = useState('INR'); // Default 'From' currency is INR
-    const [toCurrency, setToCurrency] = useState('INR'); // Default 'To' currency is INR
+    const [fromCurrency, setFromCurrency] = useState("INR"); // Default 'From' currency is INR
+    const [toCurrency, setToCurrency] = useState("INR"); // Default 'To' currency is INR
     const [amount, setAmount] = useState(1); // Default amount is 1
     const [exchangeRate, setExchangeRate] = useState(null);
     const [convertedAmount, setConvertedAmount] = useState(null);
@@ -30,33 +30,39 @@ const CurrencySelection = () => {
 
     const fetchCurrencies = async () => {
         try {
-            const response = await axios.get('https://api.exchangerate-api.com/v4/latest/USD');
+            const response = await axios.get(
+                "https://api.exchangerate-api.com/v4/latest/USD"
+            );
             const currencyData = Object.keys(response.data.rates);
             setCurrencies(currencyData);
         } catch (error) {
-            console.error('Error fetching currencies: ', error);
-            setError('Failed to fetch currencies. Please try again later.');
+            console.error("Error fetching currencies: ", error);
+            setError("Failed to fetch currencies. Please try again later.");
         }
     };
 
     const fetchExchangeRate = async () => {
         try {
-            const response = await axios.get(`https://api.exchangerate-api.com/v4/latest/${fromCurrency}`);
+            const response = await axios.get(
+                `https://api.exchangerate-api.com/v4/latest/${fromCurrency}`
+            );
             setExchangeRate(response.data.rates[toCurrency]);
         } catch (error) {
-            console.error('Error fetching exchange rate: ', error);
-            setError('Failed to fetch exchange rate. Please try again later.');
+            console.error("Error fetching exchange rate: ", error);
+            setError("Failed to fetch exchange rate. Please try again later.");
         }
     };
 
     const calculateConvertedAmount = () => {
         if (!amount || isNaN(amount) || amount <= 0) {
-            setConvertedAmount('Invalid amount');
+            setConvertedAmount("Invalid amount");
             return;
         }
 
         if (exchangeRate === null) {
-            setConvertedAmount('Exchange rate not available. Please check selection.');
+            setConvertedAmount(
+                "Exchange rate not available. Please check selection."
+            );
             return;
         }
 
@@ -92,12 +98,14 @@ const CurrencySelection = () => {
                     {currencies.map((currency) => (
                         <Option key={currency} value={currency}>
                             <img
-                                src={`https://flagcdn.com/24x18/${currency.slice(0, 2).toLowerCase()}.png`}
+                                src={`https://flagcdn.com/24x18/${currency
+                                    .slice(0, 2)
+                                    .toLowerCase()}.png`}
                                 alt={currency}
                                 onError={(e) => {
-                                    e.target.src = 'https://via.placeholder.com/24x18';
+                                    e.target.src = "https://via.placeholder.com/24x18";
                                 }}
-                                style={{ marginRight: '5px' }}
+                                style={{ marginRight: "5px" }}
                             />
                             {currency}
                         </Option>
@@ -116,12 +124,14 @@ const CurrencySelection = () => {
                     {currencies.map((currency) => (
                         <Option key={currency} value={currency}>
                             <img
-                                src={`https://flagcdn.com/24x18/${currency.slice(0, 2).toLowerCase()}.png`}
+                                src={`https://flagcdn.com/24x18/${currency
+                                    .slice(0, 2)
+                                    .toLowerCase()}.png`}
                                 alt={currency}
                                 onError={(e) => {
-                                    e.target.src = 'https://via.placeholder.com/24x18';
+                                    e.target.src = "https://via.placeholder.com/24x18";
                                 }}
-                                style={{ marginRight: '5px' }}
+                                style={{ marginRight: "5px" }}
                             />
                             {currency}
                         </Option>
@@ -139,7 +149,10 @@ const CurrencySelection = () => {
                 />
             </div>
             <div className="result-container">
-                <div className="converted-amount">Converted Amount: <span className="converted-amount-value">{convertedAmount}</span></div>
+                <div className="converted-amount">
+                    Converted Amount:{" "}
+                    <span className="converted-amount-value">{convertedAmount}</span>
+                </div>
             </div>
         </div>
     );
