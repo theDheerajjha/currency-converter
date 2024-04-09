@@ -86,12 +86,8 @@ const CurrencySelection = () => {
                     showSearch
                     className="currency-select"
                     placeholder="Select Currency"
-                    optionFilterProp="children"
                     onChange={handleFromCurrencyChange}
                     value={fromCurrency}
-                    filterOption={(input, option) =>
-                        option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                    }
                 >
                     {currencies.map((currency) => (
                         <Option key={currency} value={currency}>
@@ -114,12 +110,8 @@ const CurrencySelection = () => {
                     showSearch
                     className="currency-select"
                     placeholder="Select Currency"
-                    optionFilterProp="children"
                     onChange={handleToCurrencyChange}
                     value={toCurrency}
-                    filterOption={(input, option) =>
-                        option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                    }
                 >
                     {currencies.map((currency) => (
                         <Option key={currency} value={currency}>
