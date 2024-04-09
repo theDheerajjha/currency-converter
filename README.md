@@ -1,5 +1,5 @@
 
-<img width="928" alt="image" src="https://github.com/theDheerajjha/currency-converter/assets/52864945/6730473f-5870-40b9-97d4-f2e7783f24ca"/>
+<img width="928" alt="currency converter" src="https://github.com/theDheerajjha/currency-converter/assets/52864945/516501e4-4330-4d9c-ac71-26eeafe777e9">
 
 
 
