@@ -6,7 +6,9 @@
   min-height: 100vh;
 }
 .currency-converter-header {
-    background-color: #2cb998;
+  background-color: #3498db;
+  color: 333333;
+  margin-top: 0;
 }
 
 .input-container {
