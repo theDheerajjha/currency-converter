@@ -84,7 +84,7 @@ const CurrencySelection = () => {
 
     return (
         <div className="currency-selection-container">
-            <h1>Currency Converter</h1>
+            <h1 className="currency-converter-header">Currency Converter</h1>
             {error && <div className="error-message">{error}</div>}
             <div className="input-container">
                 <label className="label">From:</label>

@@ -1,59 +1,62 @@
 .currency-selection-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.currency-converter-header {
+    background-color: #2cb998;
 }
 
 .input-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 16px;
-    margin-left: 10px;
-    h1 {
-        background: linear-gradient(to bottom right, #b2ede0, #2cb998);
-    }
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  margin-left: 10px;
+  h1 {
+    background: linear-gradient(to bottom right, #b2ede0, #2cb998);
+  }
 }
 
 .converted-amount-value {
-    margin-left: 10px;
-    color: rgb(96, 81, 231);
+  margin-left: 10px;
+  color: rgb(96, 81, 231);
 }
 
 .label {
-    margin-right: 8px;
-    font-weight: bold;
-    width: 80px;
+  margin-right: 8px;
+  font-weight: bold;
+  width: 80px;
 }
 
 .currency-select {
-    width: 150px;
-    margin-right: 16px;
+  width: 150px;
+  margin-right: 16px;
 }
 
 .amount-input {
-    margin-right: 16px;
-    width: 150px;
+  margin-right: 16px;
+  width: 150px;
 }
 
 .result-container {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .converted-amount {
-    font-weight: bold;
-    color: black;
+  font-weight: bold;
+  color: black;
 }
 
 .country-flag {
-    width: 30px;
-    margin-left: 8px;
+  width: 30px;
+  margin-left: 8px;
 }
 
 .error-message {
-    color: red;
-    margin-bottom: 16px;
+  color: red;
+  margin-bottom: 16px;
 }
