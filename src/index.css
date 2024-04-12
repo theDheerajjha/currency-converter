@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom right, #b2ede0, #62f4d2);
+  background-color: #f5f5f5;
 }
 
 .App {
